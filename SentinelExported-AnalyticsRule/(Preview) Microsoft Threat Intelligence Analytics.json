@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "workspace": {
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "id": "[concat(resourceId('Microsoft.OperationalInsights/workspaces/providers', parameters('workspace'), 'Microsoft.SecurityInsights'),'/alertRules/f1d74776-66fc-4ac6-bf18-96f1d51f24e8')]",
+      "name": "[concat(parameters('workspace'),'/Microsoft.SecurityInsights/f1d74776-66fc-4ac6-bf18-96f1d51f24e8')]",
+      "type": "Microsoft.OperationalInsights/workspaces/providers/alertRules",
+      "kind": "ThreatIntelligence",
+      "apiVersion": "2023-02-01-preview",
+      "properties": {
+        "alertRuleTemplateName": "0dd422ee-e6af-4204-b219-f59ac172e4c6",
+        "enabled": true
+      }
+    }
+  ]
+}
